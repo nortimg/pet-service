@@ -30,13 +30,13 @@ const useStyles = makeStyles((theme) => ({
     marginRight: 'auto'
   },
   active: {
-    color: theme.palette.text.secondary,
+    color: theme.palette.text.active,
     backgroundColor: theme.palette.primary.main,
     '& $title': {
       fontWeight: theme.typography.fontWeightMedium
     },
     '& $icon': {
-      color: theme.palette.text.secondary
+      color: theme.palette.text.active
     },
     '&:hover': {
       backgroundColor: theme.palette.primary.main,
