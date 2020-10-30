@@ -24,6 +24,7 @@ import {
 } from 'react-feather';
 import PetsIcon from '@material-ui/icons/Pets';
 import AddIcon from '@material-ui/icons/Add';
+import ReceiptIcon from '@material-ui/icons/Receipt';
 import NavItem from './NavItem';
 
 const user = {
@@ -39,11 +40,6 @@ const items = [
     title: 'Dashboard'
   },
   {
-    href: '/app/customers',
-    icon: UsersIcon,
-    title: 'Customers'
-  },
-  {
     href: '/app/animals',
     icon: PetsIcon,
     title: 'Животные'
@@ -54,14 +50,9 @@ const items = [
     title: 'Добавить'
   },
   {
-    href: '/app/account',
-    icon: UserIcon,
-    title: 'Account'
-  },
-  {
-    href: '/app/settings',
-    icon: SettingsIcon,
-    title: 'Settings'
+    href: '/app/orders',
+    icon: ReceiptIcon,
+    title: 'Заявки'
   },
   {
     href: '/login',
@@ -184,7 +175,6 @@ NavBar.propTypes = {
 };
 
 NavBar.defaultProps = {
-  onMobileClose: () => {},
   openMobile: false
 };
 

@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const ProductCard = ({ className, product, ...rest }) => {
+const ProductCard = ({ className, product, height,actions, ...rest }) => {
   const classes = useStyles();
 
   return (
@@ -47,7 +47,7 @@ const ProductCard = ({ className, product, ...rest }) => {
       <CardMedia
         component="img"
         alt="Пёсик"
-        height="140"
+        height={height+'px'}
         image={product.image}
         title="Пёсик"
       />
@@ -76,25 +76,7 @@ const ProductCard = ({ className, product, ...rest }) => {
         </Typography>
       </CardContent>
       <Divider />
-      <Grid
-        container
-        justify="space-between"
-        spacing={2}
-        className={classes.contentPart}
-      >
-        <Grid
-          className={classes.statsItem}
-          item
-        >
-          <Button className="normal">Взять себе</Button>
-        </Grid>
-        <Grid
-          className={classes.statsItem}
-          item
-        >
-          <Button className="normal">Онлайн показ</Button>
-        </Grid>
-      </Grid>
+      {actions}
     </Card>
   );
 };

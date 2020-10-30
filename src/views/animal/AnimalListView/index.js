@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import {
-  Box,
+  Box, Button, Card,
   Container,
   Grid,
   makeStyles
 } from '@material-ui/core';
 import { Pagination } from '@material-ui/lab';
 import Page from 'src/components/Page';
+import * as _ from 'lodash';
 import Toolbar from './Toolbar';
 import ProductCard from './ProductCard';
 import data from './data';
-import * as _ from 'lodash'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,6 +21,13 @@ const useStyles = makeStyles((theme) => ({
   },
   productCard: {
     height: '100%'
+  },
+  statsItem: {
+    alignItems: 'center',
+    display: 'flex'
+  },
+  contentPart: {
+    padding: theme.spacing(2)
   }
 }));
 
@@ -79,7 +86,7 @@ const AnimalList = () => {
   return (
     <Page
       className={classes.root}
-      title="Products"
+      title="Животные"
     >
       <Container maxWidth={false}>
         <Toolbar
@@ -107,6 +114,34 @@ const AnimalList = () => {
               <ProductCard
                 className={classes.productCard}
                 product={product}
+                height={180}
+                actions={(
+                  <Grid
+                    container
+                    justify="space-between"
+                    spacing={2}
+                    className={classes.contentPart}
+                  >
+                    <Grid
+                      className={classes.statsItem}
+                      item
+                    >
+                      <Button className="normal">Взять себе</Button>
+                    </Grid>
+                    <Grid
+                      className={classes.statsItem}
+                      item
+                    >
+                      <Button className="normal">Посмотреть</Button>
+                    </Grid>
+                    <Grid
+                      className={classes.statsItem}
+                      item
+                    >
+                      <Button className="normal">Онлайн показ</Button>
+                    </Grid>
+                  </Grid>
+)}
               />
             </Grid>
           ))}

@@ -43,6 +43,10 @@ const theme = createMuiTheme({
         '&.normal': {
           color: '#0549c1',
           border: '2px solid #0549c1'
+        },
+        '&.red': {
+          background: '#e7372c',
+          color: '#fff'
         }
       }
     },
