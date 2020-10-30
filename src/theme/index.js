@@ -29,7 +29,7 @@ const theme = createMuiTheme({
       root: {
         fontSize: '16px',
         position: 'relative',
-        width: 'auto',
+        minWidth: '200px',
         height: '48px',
         border: 'none',
         borderRadius: '28px',
@@ -37,9 +37,9 @@ const theme = createMuiTheme({
         fontWeight: 600,
         letterSpacing: '0.05em',
         lineHeight: '24px',
-        textTransform: 'capitalize',
+        textTransform: 'none',
+        padding: '0 15px !important',
         boxShadow: 'inherit',
-        padding: '0 32px',
         '&.normal': {
           color: '#0549c1',
           border: '2px solid #0549c1'
