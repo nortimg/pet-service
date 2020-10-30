@@ -11,6 +11,7 @@ import NotFoundView from 'src/views/errors/NotFoundView';
 import AnimalListView from 'src/views/animal/AnimalListView';
 import RegisterView from 'src/views/auth/RegisterView';
 import SettingsView from 'src/views/settings/SettingsView';
+import PetPreview from './views/pet-preview';
 
 const routes = [
   {
@@ -23,6 +24,7 @@ const routes = [
       { path: 'dashboard', element: <DashboardView /> },
       { path: 'animals', element: <AnimalListView /> },
       { path: 'settings', element: <SettingsView /> },
+      { path: 'pet-preview', element: <PetPreview /> },
       { path: '*', element: <Navigate to="/404" /> }
     ]
   },
