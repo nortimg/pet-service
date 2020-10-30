@@ -20,7 +20,7 @@ const theme = createMuiTheme({
       // primary: colors.blueGrey[900],
       // secondary: colors.blueGrey[600]
       primary: '#0c1014',
-      secondary: '#0c1014'
+      secondary: colors.common.white
     }
   },
   shadows,
