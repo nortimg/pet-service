@@ -24,8 +24,31 @@ const theme = createMuiTheme({
       active: colors.common.white
     }
   },
+  overrides: {
+    MuiButton: {
+      root: {
+        fontSize: '16px',
+        position: 'relative',
+        width: 'auto',
+        height: '48px',
+        border: 'none',
+        borderRadius: '28px',
+        backgroundColor: '#fff',
+        fontWeight: 600,
+        letterSpacing: '0.05em',
+        lineHeight: '24px',
+        textTransform: 'capitalize',
+        boxShadow: 'inherit',
+        padding: '0 32px',
+        '&.normal': {
+          color: '#0549c1',
+          border: '2px solid #0549c1'
+        }
+      }
+    },
+  },
   shadows,
-  typography
+  typography,
 });
 
 export default theme;

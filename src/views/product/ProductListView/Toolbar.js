@@ -1,12 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import {
-  Box,
-  Button,
+  InputLabel,
   Card,
+  Grid,
   CardContent,
   TextField,
+  MenuItem,
+  Select,
+  Input,
+  FormControl,
   InputAdornment,
   SvgIcon,
   makeStyles
@@ -20,38 +24,28 @@ const useStyles = makeStyles((theme) => ({
   },
   exportButton: {
     marginRight: theme.spacing(1)
+  },
+  filterInput: {
+    width: '200px'
   }
 }));
 
 const Toolbar = ({ className, ...rest }) => {
   const classes = useStyles();
+  const [petName, setPetName] = useState([]);
+
+  const handleChange = (event) => {
+    setPetName(event.target.value);
+  };
 
   return (
     <div
       className={clsx(classes.root, className)}
       {...rest}
     >
-      <Box
-        display="flex"
-        justifyContent="flex-end"
-      >
-        <Button className={classes.importButton}>
-          Import
-        </Button>
-        <Button className={classes.exportButton}>
-          Export
-        </Button>
-        <Button
-          color="primary"
-          variant="contained"
-        >
-          Add product
-        </Button>
-      </Box>
-      <Box mt={3}>
-        <Card>
-          <CardContent>
-            <Box maxWidth={500}>
+      <Card>
+        <CardContent>
+            <Grid container>
               <TextField
                 fullWidth
                 InputProps={{
@@ -66,13 +60,29 @@ const Toolbar = ({ className, ...rest }) => {
                     </InputAdornment>
                   )
                 }}
-                placeholder="Search product"
+                placeholder="Поиск..."
                 variant="outlined"
               />
-            </Box>
+              <FormControl>
+                <InputLabel id="demo-mutiple-name-label">Возраст</InputLabel>
+                <Select
+                  labelId="demo-mutiple-name-label"
+                  id="demo-mutiple-name"
+                  value={petName}
+                  onChange={handleChange}
+                  input={<Input />}
+                  className={classes.filterInput}
+                >
+                  {['Молодой', 'Пожилой'].map((name) => (
+                    <MenuItem key={name} value={name}>
+                      {name}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+            </Grid>
           </CardContent>
         </Card>
-      </Box>
     </div>
   );
 };
