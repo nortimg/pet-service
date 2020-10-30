@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import {
@@ -13,6 +13,7 @@ import {
   Typography,
   makeStyles
 } from '@material-ui/core';
+import PetPreview from 'src/components/PetPreview';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,7 +38,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ProductCard = ({ className, product, ...rest }) => {
-  const classes = useStyles();
+  const classes = useStyles(); 
+  const [isDialogOpen, setIsDialogOpen] = useState(false)
+
+  const openDialog = () => setIsDialogOpen(true)
+  const closeDialog = () => setIsDialogOpen(false)
+  const call = () => console.log('call')
+
 
   return (
     <Card
@@ -92,7 +99,8 @@ const ProductCard = ({ className, product, ...rest }) => {
           className={classes.statsItem}
           item
         >
-          <Button className="normal">Онлайн показ</Button>
+          <PetPreview open={isDialogOpen} handleClose={closeDialog} call={call} />
+          <Button className="normal" onClick={openDialog}>Онлайн показ</Button>
         </Grid>
       </Grid>
     </Card>

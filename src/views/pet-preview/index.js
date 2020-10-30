@@ -26,8 +26,6 @@ const PetPreview = (props) => {
     const partnerVideo = useRef()
     const socket = useRef()
 
-    console.log({users})
-
     useEffect(() => {
         socket.current = io.connect('ws://localhost:8000')
         navigator.mediaDevices.getUserMedia({ video: true, audio: true })

@@ -72,7 +72,7 @@ const items = [
     href: '/register',
     icon: UserPlusIcon,
     title: 'Register'
-  }
+  },
 ];
 
 const useStyles = makeStyles(() => ({
@@ -184,7 +184,7 @@ NavBar.propTypes = {
 };
 
 NavBar.defaultProps = {
-  onMobileClose: () => {},
+  onMobileClose: () => { },
   openMobile: false
 };
 
