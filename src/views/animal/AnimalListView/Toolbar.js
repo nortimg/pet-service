@@ -50,7 +50,6 @@ const Toolbar = ({ className, setBreed, setPetPlace, setPetAge, setSearch, petAg
     setPetPlace(event.target.value);
   };
   const changeType = (event) => {
-    console.log('AAAAAAAAAAAAAAA')
     setBreed(event.target.value);
   };
 
