@@ -23,6 +23,7 @@ import {
   Users as UsersIcon,
 } from 'react-feather';
 import PetsIcon from '@material-ui/icons/Pets';
+import AddIcon from '@material-ui/icons/Add';
 import NavItem from './NavItem';
 
 const user = {
@@ -48,6 +49,11 @@ const items = [
     title: 'Животные'
   },
   {
+    href: '/app/add',
+    icon: AddIcon,
+    title: 'Добавить'
+  },
+  {
     href: '/app/account',
     icon: UserIcon,
     title: 'Account'
@@ -66,11 +72,6 @@ const items = [
     href: '/register',
     icon: UserPlusIcon,
     title: 'Register'
-  },
-  {
-    href: '/404',
-    icon: AlertCircleIcon,
-    title: 'Error'
   }
 ];
 
