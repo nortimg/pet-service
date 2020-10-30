@@ -79,8 +79,8 @@ const useStyles = makeStyles(() => ({
   },
   desktopDrawer: {
     width: 256,
-    top: 64,
-    height: 'calc(100% - 64px)'
+    // top: 64,
+    height: '100%'
   },
   avatar: {
     cursor: 'pointer',
